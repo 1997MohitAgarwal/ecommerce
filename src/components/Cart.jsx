@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import Header from "./Header";
-import Footer from "./Footer";
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
