@@ -40,14 +40,14 @@ export default function Header({ cart }) {
         {/* Cart Icon */}
          {(location.pathname=="/products" || location.pathname=="/cart") ?
          <div className="flex items-center">
-          <a href="/cart" className="relative text-gray-600 hover:text-green-600">
+          <Link to="/cart" className="relative text-gray-600 hover:text-green-600">
             <FaShoppingCart size={30} />
             {cart?.length > 0 && (
               <span className="absolute top-0 right-0 inline-block w-4 h-4 bg-red-600 text-white text-xs font-bold rounded-full text-center">
                 {cart.length}
               </span>
             )}
-          </a>
+          </Link>
         </div>:<div></div>}
       </nav>
     </header>
