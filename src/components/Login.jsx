@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 
-export default function Login() {
+export default function Login({setIsAuthenticated}) {
   const [error, setError] = useState("");
   const [isLogin,setIsLogin] = useState(true)
   const [loading, setLoading] = useState(false);
@@ -62,6 +62,7 @@ export default function Login() {
             "authToken",
             JSON.stringify({ email: user.email })
           );
+          setIsAuthenticated(true)
           navigate("/products");
         } else {
           throw new Error("Invalid login credentials or No user found");

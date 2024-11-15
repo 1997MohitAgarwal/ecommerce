@@ -3,7 +3,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
-export default function Header({ cart }) {
+export default function Header({ cart,setIsAuthenticated }) {
   const location = useLocation(); // Get current location
   const navigate = useNavigate()
 
@@ -15,6 +15,7 @@ export default function Header({ cart }) {
 
   const handleLogout = () => {
     localStorage.removeItem("authToken"); // Remove authToken on logout
+    setIsAuthenticated(false)
     navigate("/"); // Redirect to login page
   };
 

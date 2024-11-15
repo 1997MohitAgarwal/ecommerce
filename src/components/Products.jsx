@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Component() {
+export default function Component({setIsAuthenticated}) {
   const [cart, setCart] = useState([]);
   const newArrivals = [
     { id: 1, name: "Indoor Plant", price: 24.99, image: "/assetts/images/Bg.png" },
@@ -42,7 +42,7 @@ export default function Component() {
 
   return (
     <>
-      <Header cart={cart} />
+      <Header cart={cart} setIsAuthenticated={setIsAuthenticated} />
       <div className="min-h-screen bg-[#f8faf8] mt-20">
         {/* Hero Section */}
         <section className="relative bg-[#edf3ed]">
